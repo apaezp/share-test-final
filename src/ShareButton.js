@@ -76,9 +76,7 @@ function ShareButton() {
     const img = document.querySelector('img');
     const canvas = await html2canvas(img);
     canvasRef.current = canvas;
-    const fileName = 'cat.png';
-    const title = 'Cat in the snow';
-    const text = 'Getting cold feet...';
+    const fileName = 'cat.png';    
 
     if ('share' in navigator) {
       canvas.toBlob((blob) => {
@@ -87,9 +85,7 @@ function ShareButton() {
             new File([blob], fileName, {
               type: blob.type,
             }),
-          ],
-          title,
-          text,
+          ],         
         };
 
         navigator.share(data);
